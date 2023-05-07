@@ -1,0 +1,21 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "An API of todo list tasks.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon run server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rutvik Jani",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.4",
+    "node": "^19.8.1",
+    "nodemon": "^2.0.22",
+    "validator": "^13.9.0"
+  }
+}
