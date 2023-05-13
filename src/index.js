@@ -9,8 +9,8 @@ const taskRoute = require("../src/Routing/toDoRouting");
 // user routing files
 const userRoute = require("../src/Routing/userRouting");
 
-app.use(userRoute);
-app.use(taskRoute);
+app.use("/user",userRoute);
+app.use("/task",taskRoute);
 
 app.use(express.json());
 

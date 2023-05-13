@@ -6,7 +6,7 @@ const { config } = require("dotenv");
 const jwt = require("jsonwebtoken");
 const user = require("../Schema/toDoSchema.js");
 
-app.post("/task", async (req, res) => {
+app.post("/", async (req, res) => {
   try {
     const token = req.headers.token;
     if (!token) {
@@ -35,7 +35,7 @@ app.post("/task", async (req, res) => {
   }
 });
 
-app.get("/task", async (req, res) => {
+app.get("/", async (req, res) => {
   try {
     const token = req.headers.token;
     if (!token) {
@@ -58,7 +58,7 @@ app.get("/task", async (req, res) => {
   }
 });
 
-app.patch("/task/:id", async (req, res) => {
+app.patch("/:id", async (req, res) => {
   try {
     const token = req.headers.token;
     const id = req.params.id;
@@ -91,7 +91,7 @@ app.patch("/task/:id", async (req, res) => {
   }
 });
 
-app.delete("/task/:id", async (req, res) => {
+app.delete("/:id", async (req, res) => {
   try {
     const token = req.headers.token;
     const id = req.params.id;

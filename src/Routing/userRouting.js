@@ -7,7 +7,7 @@ const userModel = require("../Models/userModel.js");
 
 user.use(express.json());
 
-user.post("/user", async (req, res) => {
+user.post("/", async (req, res) => {
   if (
     !req.body.name ||
     !req.body.lastname ||
@@ -51,19 +51,19 @@ user.post("/user", async (req, res) => {
     }
   })
 
-// user.get("/user", async (req, res) => {
-//   try {
-//     const searchingUsers = await userModel.find();
-//     res.send(searchingUsers);
-//   } catch (e) {
-//     res.status(400).send({
-//       statusCode: 400,
-//       message: "User Not Found",
-//     });
-//   }
-// });
+user.get("/", async (req, res) => {
+  try {
+    const searchingUsers = await userModel.find();
+    res.send(searchingUsers);
+  } catch (e) {
+    res.status(400).send({
+      statusCode: 400,
+      message: "User Not Found",
+    });
+  }
+});
 
-user.patch("/user/:id", async (req, res) => {
+user.patch("/:id", async (req, res) => {
   try {
     if (!req.params.id) {
       return res.status(400).send({
@@ -88,7 +88,7 @@ user.patch("/user/:id", async (req, res) => {
   }
 });
 
-user.delete("/user/:id", async (req, res) => {
+user.delete("/:id", async (req, res) => {
   try {
     if (!req.params.id) {
       return res.status(400).send({
