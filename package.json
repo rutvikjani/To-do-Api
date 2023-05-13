@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "An API of todo list tasks.",
   "main": "index.js",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "start": "nodemon run server",
     "test": "echo \"Error: no test specified\" && exit 1"
